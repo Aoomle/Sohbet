@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: newScene.coordinateSpace.bounds)
     window?.windowScene = newScene
     window?.makeKeyAndVisible()
-    window?.rootViewController = ViewController()
+    window?.rootViewController = UINavigationController(rootViewController: Home())
+    UINavigationBar.appearance().tintColor = .label
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

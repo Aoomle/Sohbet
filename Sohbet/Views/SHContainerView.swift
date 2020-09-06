@@ -1,17 +1,18 @@
 //
-//  SHButton.swift
+//  SHAlertViewBodyLabel.swift
 //  Sohbet
 //
-//  Created by Abdulmalik Muhammad on 29/08/2020.
+//  Created by Abdulmalik Muhammad on 01/09/2020.
 //  Copyright © 2020 Aoomle. All rights reserved.
 //
 
 import UIKit
 
-class SHButton: UITextField {
+class SHContainerView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    configure()
   }
   
   required init?(coder: NSCoder) {
@@ -20,5 +21,10 @@ class SHButton: UITextField {
   
   fileprivate func configure() {
     translatesAutoresizingMaskIntoConstraints = false
+    layer.cornerRadius = 16
+    layer.borderWidth = 2
+    layer.borderColor = UIColor.white.cgColor
+    backgroundColor = .systemBackground
   }
+  
 }
