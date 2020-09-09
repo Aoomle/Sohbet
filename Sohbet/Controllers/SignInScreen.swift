@@ -41,14 +41,30 @@ class SignInScreen: UIViewController {
     view.addGestureRecognizer(tap)
   }
   
+  
   @objc fileprivate func signInAction() {
-    guard isEmailEntered, emailTextField.text!.isEmailVaid, isPasswordEntered else {
-      presentSHAlertOnMainThread(title: "Empty Emaill Address", message: "email address you input is incorrect please check and try typing the real one to login in to your account", buttonTitle: "Ok")
-      
+    guard isEmailEntered else {
+      showError(message: "Email can't be empty, please type your email address", buttonTitle: "Ok")
       return
     }
-       print("Do networking in signing in")
+    
+    guard isPasswordEntered else {
+      showError(message: "Password can't be empty", buttonTitle: "Ok")
+      return
+    }
+    
+    guard emailTextField.text!.isEmailVaid else {
+      showError(message: "Email validation issue", buttonTitle: "Ok")
+      return
+    }
+    
+    //do networking here
+   // startLoading()
+    navigationController?.setNavigationBarHidden(true, animated: true)
+    navigationController?.pushViewController(TabMenu(), animated: true)
+    print("Do networking in signing in")
    }
+    
   
   @objc fileprivate func forgetPasswordAction() {
      pushToAnotherScreen(title: "Sign In", viewController: ForgetPasswordScreen())
@@ -119,7 +135,9 @@ class SignInScreen: UIViewController {
       forgetPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
       
     ])
+    
   }
+  
 }
 
 extension SignInScreen: UITextFieldDelegate {

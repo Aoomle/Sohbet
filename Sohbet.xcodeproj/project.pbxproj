@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470C161A250820020009B05A /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C1619250820020009B05A /* CustomNavBar.swift */; };
 		4722433624F9DD6300ABAFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433524F9DD6300ABAFA7 /* AppDelegate.swift */; };
 		4722433824F9DD6300ABAFA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433724F9DD6300ABAFA7 /* SceneDelegate.swift */; };
 		4722433A24F9DD6300ABAFA7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433924F9DD6300ABAFA7 /* Home.swift */; };
@@ -16,6 +17,9 @@
 		47225BE424FCC0A10081C87D /* ForgetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */; };
 		47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE524FCC2190081C87D /* TermsScreen.swift */; };
 		47225BE824FCC57C0081C87D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE724FCC57C0081C87D /* String+Ext.swift */; };
+		472414F82507E14F0022A592 /* SHAlertViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472414F72507E14F0022A592 /* SHAlertViewError.swift */; };
+		472415002507F4EE0022A592 /* SHActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472414FF2507F4EE0022A592 /* SHActivityView.swift */; };
+		4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724150125080A090022A592 /* SHActivityIndicator.swift */; };
 		473FCAD52503503300A7CD32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */; };
 		474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474C01A724FA01EF00C6AFE8 /* SHButton.swift */; };
 		4765B63224FB14C3001B4C53 /* SHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765B63124FB14C3001B4C53 /* SHLabel.swift */; };
@@ -23,11 +27,18 @@
 		4765B63624FB2799001B4C53 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765B63524FB2799001B4C53 /* SignUpScreen.swift */; };
 		478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A4C4124FE050200B12A78 /* SHAlertView.swift */; };
 		47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7EE6624FE09AF00D62884 /* SHContainerView.swift */; };
+		47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9625074A2500D5F9FF /* TabMenu.swift */; };
+		47C96F992507523800D5F9FF /* Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F982507523800D5F9FF /* Calls.swift */; };
+		47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9A2507569D00D5F9FF /* SHBarButton.swift */; };
+		47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9D2507587D00D5F9FF /* Chat.swift */; };
+		47C96FA1250758FE00D5F9FF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96FA0250758FE00D5F9FF /* Profile.swift */; };
+		47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */; };
 		47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B572250347D4009EBDFC /* SHAlertTitle.swift */; };
 		47F0B575250347DF009EBDFC /* SHAlertBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B574250347DF009EBDFC /* SHAlertBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470C1619250820020009B05A /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		4722433224F9DD6300ABAFA7 /* Sohbet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sohbet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4722433524F9DD6300ABAFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4722433724F9DD6300ABAFA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +50,9 @@
 		47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordScreen.swift; sourceTree = "<group>"; };
 		47225BE524FCC2190081C87D /* TermsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsScreen.swift; sourceTree = "<group>"; };
 		47225BE724FCC57C0081C87D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		472414F72507E14F0022A592 /* SHAlertViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertViewError.swift; sourceTree = "<group>"; };
+		472414FF2507F4EE0022A592 /* SHActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHActivityView.swift; sourceTree = "<group>"; };
+		4724150125080A090022A592 /* SHActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHActivityIndicator.swift; sourceTree = "<group>"; };
 		473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		474C01A724FA01EF00C6AFE8 /* SHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 		4765B63124FB14C3001B4C53 /* SHLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLabel.swift; sourceTree = "<group>"; };
@@ -46,6 +60,12 @@
 		4765B63524FB2799001B4C53 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		478A4C4124FE050200B12A78 /* SHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertView.swift; sourceTree = "<group>"; };
 		47A7EE6624FE09AF00D62884 /* SHContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHContainerView.swift; sourceTree = "<group>"; };
+		47C96F9625074A2500D5F9FF /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
+		47C96F982507523800D5F9FF /* Calls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calls.swift; sourceTree = "<group>"; };
+		47C96F9A2507569D00D5F9FF /* SHBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBarButton.swift; sourceTree = "<group>"; };
+		47C96F9D2507587D00D5F9FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		47C96FA0250758FE00D5F9FF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		47F0B572250347D4009EBDFC /* SHAlertTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertTitle.swift; sourceTree = "<group>"; };
 		47F0B574250347DF009EBDFC /* SHAlertBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +100,9 @@
 		4722433424F9DD6300ABAFA7 /* Sohbet */ = {
 			isa = PBXGroup;
 			children = (
+				47C96FA525075AD000D5F9FF /* Utilities */,
+				47C96FA425075A7000D5F9FF /* API */,
+				47C96FA325075A5100D5F9FF /* Model */,
 				47225BE924FCC5BD0081C87D /* Extension */,
 				474C01A924FA03BD00C6AFE8 /* Controllers */,
 				474C01AB24FA077400C6AFE8 /* Views */,
@@ -98,6 +121,33 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		4724150325080C1C0022A592 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				478A4C4124FE050200B12A78 /* SHAlertView.swift */,
+				472414FF2507F4EE0022A592 /* SHActivityView.swift */,
+				472414F72507E14F0022A592 /* SHAlertViewError.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		4724150425080C3D0022A592 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				470C1619250820020009B05A /* CustomNavBar.swift */,
+				47A7EE6624FE09AF00D62884 /* SHContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4724150525080C4A0022A592 /* ActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				4724150125080A090022A592 /* SHActivityIndicator.swift */,
+			);
+			path = ActivityIndicatorView;
+			sourceTree = "<group>";
+		};
 		474C01A924FA03BD00C6AFE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +156,7 @@
 				4765B63524FB2799001B4C53 /* SignUpScreen.swift */,
 				47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */,
 				47225BE524FCC2190081C87D /* TermsScreen.swift */,
+				47C96F9F250758B200D5F9FF /* Tab Bar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,23 +175,74 @@
 		474C01AB24FA077400C6AFE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				474C01A724FA01EF00C6AFE8 /* SHButton.swift */,
-				4722434924F9DF2000ABAFA7 /* SHTextField.swift */,
-				4765B63124FB14C3001B4C53 /* SHLabel.swift */,
-				478A4C4124FE050200B12A78 /* SHAlertView.swift */,
-				47A7EE6624FE09AF00D62884 /* SHContainerView.swift */,
-				47F0B576250349F0009EBDFC /* Alert View */,
+				47C96F9C250756A200D5F9FF /* Button */,
+				47C96FA225075A1D00D5F9FF /* TextField */,
+				4724150325080C1C0022A592 /* UIViewController */,
+				4724150425080C3D0022A592 /* View */,
+				47F0B576250349F0009EBDFC /* Label */,
+				4724150525080C4A0022A592 /* ActivityIndicatorView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		47F0B576250349F0009EBDFC /* Alert View */ = {
+		47C96F9C250756A200D5F9FF /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				474C01A724FA01EF00C6AFE8 /* SHButton.swift */,
+				47C96F9A2507569D00D5F9FF /* SHBarButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		47C96F9F250758B200D5F9FF /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				47C96F9625074A2500D5F9FF /* TabMenu.swift */,
+				47C96F982507523800D5F9FF /* Calls.swift */,
+				47C96F9D2507587D00D5F9FF /* Chat.swift */,
+				47C96FA0250758FE00D5F9FF /* Profile.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		47C96FA225075A1D00D5F9FF /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4722434924F9DF2000ABAFA7 /* SHTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		47C96FA325075A5100D5F9FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47C96FA425075A7000D5F9FF /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		47C96FA525075AD000D5F9FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		47F0B576250349F0009EBDFC /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				4765B63124FB14C3001B4C53 /* SHLabel.swift */,
 				47F0B572250347D4009EBDFC /* SHAlertTitle.swift */,
 				47F0B574250347DF009EBDFC /* SHAlertBody.swift */,
 			);
-			path = "Alert View";
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +317,7 @@
 			files = (
 				4722434A24F9DF2000ABAFA7 /* SHTextField.swift in Sources */,
 				474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */,
+				47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */,
 				47225BE424FCC0A10081C87D /* ForgetPasswordScreen.swift in Sources */,
 				4722433A24F9DD6300ABAFA7 /* Home.swift in Sources */,
 				4765B63624FB2799001B4C53 /* SignUpScreen.swift in Sources */,
@@ -222,10 +325,19 @@
 				4722433624F9DD6300ABAFA7 /* AppDelegate.swift in Sources */,
 				4722433824F9DD6300ABAFA7 /* SceneDelegate.swift in Sources */,
 				4765B63224FB14C3001B4C53 /* SHLabel.swift in Sources */,
+				472414F82507E14F0022A592 /* SHAlertViewError.swift in Sources */,
+				47C96F992507523800D5F9FF /* Calls.swift in Sources */,
+				472415002507F4EE0022A592 /* SHActivityView.swift in Sources */,
+				47C96FA1250758FE00D5F9FF /* Profile.swift in Sources */,
+				470C161A250820020009B05A /* CustomNavBar.swift in Sources */,
+				4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */,
 				47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */,
 				47F0B575250347DF009EBDFC /* SHAlertBody.swift in Sources */,
+				47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */,
+				47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */,
 				47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */,
 				478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */,
+				47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */,
 				47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */,
 				473FCAD52503503300A7CD32 /* UIViewController+Ext.swift in Sources */,
 				47225BE824FCC57C0081C87D /* String+Ext.swift in Sources */,

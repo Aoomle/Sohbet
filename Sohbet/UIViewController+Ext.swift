@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
   
-  func presentSHAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+  func showAlert(title: String, message: String, buttonTitle: String) {
     DispatchQueue.main.async {
       let alertVC = SHAlertView(title: title, message: message, buttonTitle: buttonTitle)
       alertVC.modalTransitionStyle = .crossDissolve
@@ -18,4 +18,30 @@ extension UIViewController {
       self.present(alertVC, animated: true, completion: nil)
     }
   }
+  
+  func showError(message: String, buttonTitle: String) {
+    DispatchQueue.main.async {
+      let alertVC = SHAlertViewError(message: message, buttonTitle: buttonTitle)
+      alertVC.modalTransitionStyle = .crossDissolve
+      alertVC.modalPresentationStyle = .overFullScreen
+      self.present(alertVC, animated: true, completion: nil)
+    }
+  }
+  
+  func startLoading() {
+    let showVC = SHActivityView(message: "Please Wait...")
+    showVC.activityLoader.startAnimating()
+    showVC.modalTransitionStyle = .crossDissolve
+    showVC.modalPresentationStyle = .overFullScreen
+    self.present(showVC, animated: true, completion: nil)
+  }
+  
+  func stopLoading() {
+     let showVC = SHActivityView()
+     showVC.modalTransitionStyle = .crossDissolve
+     showVC.activityLoader.stopAnimating()
+     showVC.modalPresentationStyle = .overFullScreen
+     self.present(showVC, animated: true, completion: nil)
+   }
+  
 }
