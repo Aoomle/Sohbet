@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: newScene.coordinateSpace.bounds)
     window?.windowScene = newScene
     window?.makeKeyAndVisible()
-    window?.rootViewController = UINavigationController(rootViewController: Home())
+    window?.rootViewController = TabMenu()
+      //UINavigationController(rootViewController: Home())
     UINavigationBar.appearance().tintColor = .label
   }
 

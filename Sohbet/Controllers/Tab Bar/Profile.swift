@@ -8,14 +8,13 @@
 
 import UIKit
 
-class Chat: UIViewController {
+class Profile: UIViewController {
 
-  var collectionView: UICollectionView!
+  var collectionView: UITableView!
   let customNavBar = CustomNavBar()
-  let titled = SHLabel(title: "Chat", textAlign: .center, fontSize: UIFont.preferredFont(forTextStyle: .largeTitle))
+  let titled = SHLabel(title: "Profile", textAlign: .center, fontSize: UIFont.preferredFont(forTextStyle: .largeTitle))
   
   var addButton = SHButton()
-  var searchButton = SHButton()
   
   override func viewDidLoad() {
       super.viewDidLoad()
@@ -31,30 +30,22 @@ class Chat: UIViewController {
   fileprivate func configureNavBar() {
     view.addSubview(customNavBar)
     customNavBar.addSubview(addButton)
-    customNavBar.addSubview(searchButton)
     customNavBar.addSubview(titled)
 
     addButton.addTarget(self, action: #selector(handleAdd), for: .touchUpInside)
-    searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     
-    addButton.setBackgroundImage(#imageLiteral(resourceName: "add"), for: .normal)
-    searchButton.setBackgroundImage(#imageLiteral(resourceName: "icons8-search"), for: .normal)
+    addButton.setBackgroundImage(#imageLiteral(resourceName: "icons8-add_to_chat"), for: .normal)
   
     NSLayoutConstraint.activate([
       titled.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor, constant: 20),
-      titled.leadingAnchor.constraint(equalTo: customNavBar.leadingAnchor),
+      titled.leadingAnchor.constraint(equalTo: customNavBar.leadingAnchor, constant: 10),
       titled.widthAnchor.constraint(equalToConstant: 100),
       titled.heightAnchor.constraint(equalToConstant: 100),
 
-      addButton.trailingAnchor.constraint(equalTo: searchButton.trailingAnchor, constant: -50),
+      addButton.trailingAnchor.constraint(equalTo: customNavBar.trailingAnchor, constant: -20),
       addButton.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor, constant: 20),
       addButton.widthAnchor.constraint(equalToConstant: 30),
       addButton.heightAnchor.constraint(equalToConstant: 30),
-      
-      searchButton.trailingAnchor.constraint(equalTo: customNavBar.trailingAnchor, constant: -20),
-      searchButton.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor, constant: 20),
-      searchButton.widthAnchor.constraint(equalToConstant: 30),
-      searchButton.heightAnchor.constraint(equalToConstant: 30),
       
       customNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       customNavBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -65,11 +56,11 @@ class Chat: UIViewController {
   }
   
   fileprivate func configureCollectionView() {
-    collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    collectionView = UITableView(frame: .zero, style: .plain)
     view.addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.backgroundColor = .systemBackground
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+    collectionView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
     
     NSLayoutConstraint.activate([
        collectionView.topAnchor.constraint(equalTo: customNavBar.bottomAnchor, constant: 10),
