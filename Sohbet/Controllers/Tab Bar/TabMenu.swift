@@ -21,8 +21,6 @@ class TabMenu: UITabBarController {
   fileprivate func configure() {
     let layout = UICollectionViewFlowLayout()
     let layoutChat = UICollectionViewFlowLayout()
-//    layoutChat.scrollDirection = .vertical
-//    layout.scrollDirection = .vertical
     viewControllers = [
       generateController(viewController: Calls(collectionViewLayout: layout), title: "Calls", image: #imageLiteral(resourceName: "call")),
       generateController(viewController: Chat(collectionViewLayout: layoutChat), title: "Chats", image: #imageLiteral(resourceName: "chat")),

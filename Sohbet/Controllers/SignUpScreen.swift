@@ -66,46 +66,64 @@ class SignUpScreen: UIViewController {
     signUpHUD.textLabel.text = "Signing Up..."
     signUpHUD.show(in: view)
     
+    NetworkingManager.shared.signUpUser(email: email, password: password) { ( message) in
+      if let message = message {
+        self.startJG(titleError: message, messageError: "")
+        return
+      }
+      //storage
+      guard let image = self.profileImageButton.imageView?.image else { return }
+      guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
+      NetworkingManager.shared.saveToStorage(upload: uploadImage) { (messageStr) in
+        if let messageStr = messageStr {
+          self.startJG(titleError: messageStr, messageError: "")
+            return
+        }
+//        //save to database
+//        NetworkingManager.shared.saveToDatabse(user: Auth.auth().currentUser!, data: ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""])
+      }
+    }
+    
     Auth.auth().createUser(withEmail: email, password: password) { (message, err) in
-        if let err = err {
+      if let err = err {
           //password character must be 6 character or more
           //network connection problem
-          self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
-          } else {
-              print("\(message?.user.email ?? "")")
-              self.navigationController?.setNavigationBarHidden(true, animated: true)
-              self.navigationController?.pushViewController(TabMenu(), animated: true)
+        self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
+      } else {
+          print("\(message?.user.email ?? "")")
+          self.navigationController?.setNavigationBarHidden(true, animated: true)
+          self.navigationController?.pushViewController(TabMenu(), animated: true)
         
           //storage
-          guard let image = self.profileImageButton.imageView?.image else { return }
-          guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
-          let filename = UUID().uuidString
+      guard let image = self.profileImageButton.imageView?.image else { return }
+      guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
+      let filename = UUID().uuidString
+      
+      let ref = Storage.storage().reference().child("profile_images").child(filename)
+      
+      ref.putData(uploadImage, metadata: nil) { (metadata, err) in
+        if let err = err {
+          self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
+        }
+        
+      ref.downloadURL { (imageUrl, err) in
+        if let err = err {
+          self.startJG(titleError: err.localizedDescription, messageError: "")
+          return
+        }
           
-          let ref = Storage.storage().reference().child("profile_images").child(filename)
+          print("Downloading of our url image....", imageUrl?.absoluteString ?? "")
           
-          ref.putData(uploadImage, metadata: nil) { (metadata, err) in
-            if let err = err {
-              self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
-            }
-            
-            ref.downloadURL { (imageUrl, err) in
-              if let err = err {
-                self.startJG(titleError: err.localizedDescription, messageError: "")
-                return
-              }
-              
-              print("Downloading of our url image....", imageUrl?.absoluteString ?? "")
-              
-              //database
-                let uid = message?.user.uid
-                let dictionaryValues = ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""]
-                let values = [uid : dictionaryValues]
-                         
-                Database.database().reference().child("users").updateChildValues(values) { (err, dataRef) in
-                    if let err = err {
-                      print("database failed to saved data", err.localizedDescription)
-                    }
-                    print("Successfully saved into the database")
+          //database
+            let uid = message?.user.uid
+            let dictionaryValues = ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""]
+            let values = [uid : dictionaryValues]
+                      
+            Database.database().reference().child("users").updateChildValues(values) { (err, dataRef) in
+                if let err = err {
+                  print("database failed to saved data", err.localizedDescription)
+                }
+                print("Successfully saved into the database")
                            
                 }
           }

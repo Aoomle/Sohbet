@@ -42,6 +42,8 @@
 		47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E834C7250C15E800D4DA09 /* UIExtensions.swift */; };
 		47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B572250347D4009EBDFC /* SHAlertTitle.swift */; };
 		47F0B575250347DF009EBDFC /* SHAlertBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B574250347DF009EBDFC /* SHAlertBody.swift */; };
+		47FAA80525162CED002F1E24 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAA80425162CED002F1E24 /* ChatCell.swift */; };
+		47FAA8072516376F002F1E24 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAA8062516376F002F1E24 /* StatusBar.swift */; };
 		4DD35B2AF5927122E2149680 /* Pods_Sohbet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782011F72660EED70845F220 /* Pods_Sohbet.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		47E834C7250C15E800D4DA09 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		47F0B572250347D4009EBDFC /* SHAlertTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertTitle.swift; sourceTree = "<group>"; };
 		47F0B574250347DF009EBDFC /* SHAlertBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertBody.swift; sourceTree = "<group>"; };
+		47FAA80425162CED002F1E24 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		47FAA8062516376F002F1E24 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		6FB3925D35E5F6D669FF1484 /* Pods-Sohbet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sohbet.release.xcconfig"; path = "Target Support Files/Pods-Sohbet/Pods-Sohbet.release.xcconfig"; sourceTree = "<group>"; };
 		782011F72660EED70845F220 /* Pods_Sohbet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sohbet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -213,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				47E1E467250E0605007522DB /* ProfileCell.swift */,
+				47FAA80425162CED002F1E24 /* ChatCell.swift */,
+				47FAA8062516376F002F1E24 /* StatusBar.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			files = (
 				4722434A24F9DF2000ABAFA7 /* SHTextField.swift in Sources */,
 				474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */,
+				47FAA80525162CED002F1E24 /* ChatCell.swift in Sources */,
 				47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */,
 				478B0D842510257B00AD0C46 /* StatusMessenger.swift in Sources */,
 				47225BE424FCC0A10081C87D /* ForgetPasswordScreen.swift in Sources */,
@@ -433,6 +440,7 @@
 				47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */,
 				47E1E468250E0605007522DB /* ProfileCell.swift in Sources */,
 				472415002507F4EE0022A592 /* SHActivityView.swift in Sources */,
+				47FAA8072516376F002F1E24 /* StatusBar.swift in Sources */,
 				470C161A250820020009B05A /* CustomNavBar.swift in Sources */,
 				4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */,
 				47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */,

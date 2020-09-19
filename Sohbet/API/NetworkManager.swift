@@ -14,20 +14,7 @@ class NetworkingManager {
   static let shared = NetworkingManager()
   
   private init(){}
-  
-  fileprivate func createUser(email: String, password: String, completion: @escaping ((String?) -> Void) ) {
-    Auth.auth().createUser(withEmail: email, password: password) { (success, error) in
-      
-      if let error = error {
-        completion(error.localizedDescription)
-        return
-      }
-      
-    }
-  }
-  
-  
-  
+    
   func userIsLoggedIn() -> Bool {
     if Auth.auth().currentUser != nil {
       return true
@@ -65,6 +52,7 @@ class NetworkingManager {
         return
       }
       completion(nil)
+      //self.saveToStorage(upload: <#T##Data#>, completion: <#T##((String?) -> Void)##((String?) -> Void)##(String?) -> Void#>)
       //save to storage
       //save to database
     }
@@ -98,6 +86,25 @@ class NetworkingManager {
     }
   }
   
+  
+  
+  ///DATABASE
+  
+  func saveToDatabse(data: [String: Any]) {
+
+    let uid = Auth.auth().currentUser?.uid
+    let dictionaryValues = data
+//      ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""]
+    let values = [uid : dictionaryValues]
+             
+    Database.database().reference().child("users").updateChildValues(values) { (err, dataRef) in
+        if let err = err {
+          print("database failed to saved data", err.localizedDescription)
+        }
+        print("Successfully saved into the database")
+               
+    }
+  }
   
   
   private func errorHandler(err: NSError, completion: @escaping ((String?) ->Void)) {
