@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Home: UIViewController {
 
@@ -22,6 +23,12 @@ class Home: UIViewController {
     actionButtons()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+//    if NetworkingManager.shared.userIsLoggedIn() {
+//      self.navigationController?.setNavigationBarHidden(true, animated: true)
+//      self.navigationController?.pushViewController(TabMenu(), animated: true)
+//    }
+  }
   fileprivate func configureViews() {
     //change sign in title in white background to black
     signInButton.setTitleColor(.darkText, for: .normal)
@@ -48,7 +55,7 @@ class Home: UIViewController {
       
     ])
   }
-  
+ 
   fileprivate func actionButtons() {
     signInButton.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
     signUpButton.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)

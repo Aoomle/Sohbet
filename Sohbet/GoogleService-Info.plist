@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>102757566913-162j86mohqnuncqhmo3vofbtcod5v65i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.102757566913-162j86mohqnuncqhmo3vofbtcod5v65i</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDmfIy55_r0P34Dv4oyKPKRg2mh-XqVnqc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>102757566913</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.aoomle.Sohbet</string>
+	<key>PROJECT_ID</key>
+	<string>sohbet-ef4c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sohbet-ef4c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:102757566913:ios:8703aa4b1a0454db</string>
+	<key>DATABASE_URL</key>
+	<string>https://sohbet-ef4c2.firebaseio.com</string>
+</dict>
+</plist>

@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		470C161A250820020009B05A /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C1619250820020009B05A /* CustomNavBar.swift */; };
-		471CA47B250874CD00CD121C /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 471CA47A250874CD00CD121C /* JGProgressHUD */; };
 		4722433624F9DD6300ABAFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433524F9DD6300ABAFA7 /* AppDelegate.swift */; };
 		4722433824F9DD6300ABAFA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433724F9DD6300ABAFA7 /* SceneDelegate.swift */; };
 		4722433A24F9DD6300ABAFA7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722433924F9DD6300ABAFA7 /* Home.swift */; };
@@ -23,22 +22,31 @@
 		4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724150125080A090022A592 /* SHActivityIndicator.swift */; };
 		473FCAD52503503300A7CD32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */; };
 		474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474C01A724FA01EF00C6AFE8 /* SHButton.swift */; };
+		4753D8032510528B00D2F7D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4753D8022510528B00D2F7D5 /* GoogleService-Info.plist */; };
+		4753D80825105E9500D2F7D5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4753D80725105E9500D2F7D5 /* NetworkManager.swift */; };
+		475E9225250F69D3005C599C /* ProfileOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475E9224250F69D3005C599C /* ProfileOLD.swift */; };
 		4765B63224FB14C3001B4C53 /* SHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765B63124FB14C3001B4C53 /* SHLabel.swift */; };
 		4765B63424FB274B001B4C53 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765B63324FB274B001B4C53 /* SignInScreen.swift */; };
 		4765B63624FB2799001B4C53 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765B63524FB2799001B4C53 /* SignUpScreen.swift */; };
 		478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A4C4124FE050200B12A78 /* SHAlertView.swift */; };
+		478B0D82251007D500AD0C46 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B0D81251007D500AD0C46 /* ProfileController.swift */; };
+		478B0D842510257B00AD0C46 /* StatusMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B0D832510257B00AD0C46 /* StatusMessenger.swift */; };
 		47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7EE6624FE09AF00D62884 /* SHContainerView.swift */; };
 		47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9625074A2500D5F9FF /* TabMenu.swift */; };
 		47C96F992507523800D5F9FF /* Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F982507523800D5F9FF /* Calls.swift */; };
 		47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9A2507569D00D5F9FF /* SHBarButton.swift */; };
 		47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9D2507587D00D5F9FF /* Chat.swift */; };
-		47C96FA1250758FE00D5F9FF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96FA0250758FE00D5F9FF /* Profile.swift */; };
 		47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */; };
+		47E1E468250E0605007522DB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1E467250E0605007522DB /* ProfileCell.swift */; };
+		47E1E470250E94D9007522DB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1E46F250E94D9007522DB /* Settings.swift */; };
+		47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E834C7250C15E800D4DA09 /* UIExtensions.swift */; };
 		47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B572250347D4009EBDFC /* SHAlertTitle.swift */; };
 		47F0B575250347DF009EBDFC /* SHAlertBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B574250347DF009EBDFC /* SHAlertBody.swift */; };
+		4DD35B2AF5927122E2149680 /* Pods_Sohbet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782011F72660EED70845F220 /* Pods_Sohbet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DA63AE555658FEFE060E309 /* Pods-Sohbet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sohbet.debug.xcconfig"; path = "Target Support Files/Pods-Sohbet/Pods-Sohbet.debug.xcconfig"; sourceTree = "<group>"; };
 		470C1619250820020009B05A /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		4722433224F9DD6300ABAFA7 /* Sohbet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sohbet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4722433524F9DD6300ABAFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,19 +64,28 @@
 		4724150125080A090022A592 /* SHActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHActivityIndicator.swift; sourceTree = "<group>"; };
 		473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		474C01A724FA01EF00C6AFE8 /* SHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
+		4753D8022510528B00D2F7D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4753D80725105E9500D2F7D5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		475E9224250F69D3005C599C /* ProfileOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOLD.swift; sourceTree = "<group>"; };
 		4765B63124FB14C3001B4C53 /* SHLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLabel.swift; sourceTree = "<group>"; };
 		4765B63324FB274B001B4C53 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		4765B63524FB2799001B4C53 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		478A4C4124FE050200B12A78 /* SHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertView.swift; sourceTree = "<group>"; };
+		478B0D81251007D500AD0C46 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		478B0D832510257B00AD0C46 /* StatusMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessenger.swift; sourceTree = "<group>"; };
 		47A7EE6624FE09AF00D62884 /* SHContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHContainerView.swift; sourceTree = "<group>"; };
 		47C96F9625074A2500D5F9FF /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 		47C96F982507523800D5F9FF /* Calls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calls.swift; sourceTree = "<group>"; };
 		47C96F9A2507569D00D5F9FF /* SHBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBarButton.swift; sourceTree = "<group>"; };
 		47C96F9D2507587D00D5F9FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		47C96FA0250758FE00D5F9FF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		47E1E467250E0605007522DB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		47E1E46F250E94D9007522DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		47E834C7250C15E800D4DA09 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		47F0B572250347D4009EBDFC /* SHAlertTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertTitle.swift; sourceTree = "<group>"; };
 		47F0B574250347DF009EBDFC /* SHAlertBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertBody.swift; sourceTree = "<group>"; };
+		6FB3925D35E5F6D669FF1484 /* Pods-Sohbet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sohbet.release.xcconfig"; path = "Target Support Files/Pods-Sohbet/Pods-Sohbet.release.xcconfig"; sourceTree = "<group>"; };
+		782011F72660EED70845F220 /* Pods_Sohbet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sohbet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				471CA47B250874CD00CD121C /* JGProgressHUD in Frameworks */,
+				4DD35B2AF5927122E2149680 /* Pods_Sohbet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,8 @@
 			children = (
 				4722433424F9DD6300ABAFA7 /* Sohbet */,
 				4722433324F9DD6300ABAFA7 /* Products */,
+				CD6CF6AB7FEAD2151A66D20E /* Pods */,
+				BBC22684A1C07FB78AAF39B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +129,7 @@
 				474C01AB24FA077400C6AFE8 /* Views */,
 				474C01AA24FA074D00C6AFE8 /* Support File */,
 				4722434324F9DD6600ABAFA7 /* Info.plist */,
+				4753D8022510528B00D2F7D5 /* GoogleService-Info.plist */,
 			);
 			path = Sohbet;
 			sourceTree = "<group>";
@@ -117,6 +137,7 @@
 		47225BE924FCC5BD0081C87D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				47E834C7250C15E800D4DA09 /* UIExtensions.swift */,
 				47225BE724FCC57C0081C87D /* String+Ext.swift */,
 				473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */,
 			);
@@ -177,6 +198,7 @@
 		474C01AB24FA077400C6AFE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				475E9226250F69E5005C599C /* Cell */,
 				47C96F9C250756A200D5F9FF /* Button */,
 				47C96FA225075A1D00D5F9FF /* TextField */,
 				4724150325080C1C0022A592 /* UIViewController */,
@@ -185,6 +207,14 @@
 				4724150525080C4A0022A592 /* ActivityIndicatorView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		475E9226250F69E5005C599C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				47E1E467250E0605007522DB /* ProfileCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		47C96F9C250756A200D5F9FF /* Button */ = {
@@ -202,7 +232,8 @@
 				47C96F9625074A2500D5F9FF /* TabMenu.swift */,
 				47C96F982507523800D5F9FF /* Calls.swift */,
 				47C96F9D2507587D00D5F9FF /* Chat.swift */,
-				47C96FA0250758FE00D5F9FF /* Profile.swift */,
+				475E9224250F69D3005C599C /* ProfileOLD.swift */,
+				478B0D81251007D500AD0C46 /* ProfileController.swift */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -218,6 +249,8 @@
 		47C96FA325075A5100D5F9FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				47E1E46F250E94D9007522DB /* Settings.swift */,
+				478B0D832510257B00AD0C46 /* StatusMessenger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +258,7 @@
 		47C96FA425075A7000D5F9FF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4753D80725105E9500D2F7D5 /* NetworkManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -247,6 +281,23 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
+		BBC22684A1C07FB78AAF39B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				782011F72660EED70845F220 /* Pods_Sohbet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD6CF6AB7FEAD2151A66D20E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DA63AE555658FEFE060E309 /* Pods-Sohbet.debug.xcconfig */,
+				6FB3925D35E5F6D669FF1484 /* Pods-Sohbet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,9 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4722434624F9DD6600ABAFA7 /* Build configuration list for PBXNativeTarget "Sohbet" */;
 			buildPhases = (
+				90A3FC8AB5F8BB2BAD855169 /* [CP] Check Pods Manifest.lock */,
 				4722432E24F9DD6300ABAFA7 /* Sources */,
 				4722432F24F9DD6300ABAFA7 /* Frameworks */,
 				4722433024F9DD6300ABAFA7 /* Resources */,
+				34D256BE25A7A8E8A8D188B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,7 +317,6 @@
 			);
 			name = Sohbet;
 			packageProductDependencies = (
-				471CA47A250874CD00CD121C /* JGProgressHUD */,
 			);
 			productName = Sohbet;
 			productReference = 4722433224F9DD6300ABAFA7 /* Sohbet.app */;
@@ -295,7 +347,6 @@
 			);
 			mainGroup = 4722432924F9DD6300ABAFA7;
 			packageReferences = (
-				471CA479250874CD00CD121C /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 4722433324F9DD6300ABAFA7 /* Products */;
 			projectDirPath = "";
@@ -313,10 +364,53 @@
 			files = (
 				4722434224F9DD6600ABAFA7 /* LaunchScreen.storyboard in Resources */,
 				4722433F24F9DD6600ABAFA7 /* Assets.xcassets in Resources */,
+				4753D8032510528B00D2F7D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34D256BE25A7A8E8A8D188B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sohbet/Pods-Sohbet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sohbet/Pods-Sohbet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sohbet/Pods-Sohbet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90A3FC8AB5F8BB2BAD855169 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sohbet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4722432E24F9DD6300ABAFA7 /* Sources */ = {
@@ -326,6 +420,7 @@
 				4722434A24F9DF2000ABAFA7 /* SHTextField.swift in Sources */,
 				474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */,
 				47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */,
+				478B0D842510257B00AD0C46 /* StatusMessenger.swift in Sources */,
 				47225BE424FCC0A10081C87D /* ForgetPasswordScreen.swift in Sources */,
 				4722433A24F9DD6300ABAFA7 /* Home.swift in Sources */,
 				4765B63624FB2799001B4C53 /* SignUpScreen.swift in Sources */,
@@ -335,15 +430,20 @@
 				4765B63224FB14C3001B4C53 /* SHLabel.swift in Sources */,
 				472414F82507E14F0022A592 /* SHAlertViewError.swift in Sources */,
 				47C96F992507523800D5F9FF /* Calls.swift in Sources */,
+				47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */,
+				47E1E468250E0605007522DB /* ProfileCell.swift in Sources */,
 				472415002507F4EE0022A592 /* SHActivityView.swift in Sources */,
-				47C96FA1250758FE00D5F9FF /* Profile.swift in Sources */,
 				470C161A250820020009B05A /* CustomNavBar.swift in Sources */,
 				4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */,
 				47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */,
 				47F0B575250347DF009EBDFC /* SHAlertBody.swift in Sources */,
+				4753D80825105E9500D2F7D5 /* NetworkManager.swift in Sources */,
+				478B0D82251007D500AD0C46 /* ProfileController.swift in Sources */,
 				47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */,
+				475E9225250F69D3005C599C /* ProfileOLD.swift in Sources */,
 				47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */,
 				47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */,
+				47E1E470250E94D9007522DB /* Settings.swift in Sources */,
 				478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */,
 				47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */,
 				47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */,
@@ -482,6 +582,7 @@
 		};
 		4722434724F9DD6600ABAFA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DA63AE555658FEFE060E309 /* Pods-Sohbet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +601,7 @@
 		};
 		4722434824F9DD6600ABAFA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB3925D35E5F6D669FF1484 /* Pods-Sohbet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -538,25 +640,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		471CA479250874CD00CD121C /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		471CA47A250874CD00CD121C /* JGProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 471CA479250874CD00CD121C /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4722432A24F9DD6300ABAFA7 /* Project object */;
 }

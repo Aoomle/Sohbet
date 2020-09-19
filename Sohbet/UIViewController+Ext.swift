@@ -22,6 +22,8 @@ extension UIViewController {
   func showError(message: String, buttonTitle: String) {
     DispatchQueue.main.async {
       let alertVC = SHAlertViewError(message: message, buttonTitle: buttonTitle)
+      alertVC.actionButton.setTitleColor(.systemBackground, for: .normal)
+      alertVC.actionButton.backgroundColor = .label
       alertVC.modalTransitionStyle = .crossDissolve
       alertVC.modalPresentationStyle = .overFullScreen
       self.present(alertVC, animated: true, completion: nil)

@@ -35,3 +35,12 @@ class SHButton: UIButton {
 
 }
 
+extension UIButton {
+  func customButton(background: UIColor, titleColor: UIColor, title: String, radius: Int = 0){
+    self.backgroundColor = background
+    self.setTitleColor(titleColor, for: .normal)
+    self.setTitle(title, for: .normal)
+    self.layer.cornerRadius = CGFloat(radius)
+  }
+  
+}

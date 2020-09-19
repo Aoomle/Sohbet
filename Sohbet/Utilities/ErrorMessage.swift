@@ -10,5 +10,11 @@ import Foundation
 
 enum ErrorMessage: String {
   case failed = "failed"
-  case networkError = "Network Error"
+  case NETWROK_ERROR = "Network Error"
+  case WRONG_PASSWORD = "Wrong password"
+  case PROBLEM_CONNECTION = "Issue connecting to the server, Please try again later."
+  case USER_NOT_FOUND = "User doesn't exists, Please sign up."
+  case EMAIL_ALREADY_IN_USE = "Email already in use, please use another email."
+  case WEAK_PASSWORD = "Password should be at least 6 characters long."
+  
 }

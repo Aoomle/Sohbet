@@ -19,11 +19,14 @@ class TabMenu: UITabBarController {
   
   
   fileprivate func configure() {
-    
+    let layout = UICollectionViewFlowLayout()
+    let layoutChat = UICollectionViewFlowLayout()
+//    layoutChat.scrollDirection = .vertical
+//    layout.scrollDirection = .vertical
     viewControllers = [
-      generateController(viewController: Calls(), title: "Calls", image: #imageLiteral(resourceName: "call")),
-      generateController(viewController: Chat(), title: "Chats", image: #imageLiteral(resourceName: "chat")),
-      generateController(viewController: Profile(), title: "Profile", image: #imageLiteral(resourceName: "profile"))
+      generateController(viewController: Calls(collectionViewLayout: layout), title: "Calls", image: #imageLiteral(resourceName: "call")),
+      generateController(viewController: Chat(collectionViewLayout: layoutChat), title: "Chats", image: #imageLiteral(resourceName: "chat")),
+      generateController(viewController: ProfileController(collectionViewLayout: layout), title: "Profile", image: #imageLiteral(resourceName: "profile"))
     ]
   }
   

@@ -8,78 +8,116 @@
 
 import UIKit
 
-class Calls: UIViewController {
-
-  var collectionView: UICollectionView!
-  let customNavBar = CustomNavBar()
-  let titled = SHLabel(title: "Calls", textAlign: .center, fontSize: UIFont.preferredFont(forTextStyle: .largeTitle))
+class CallCell: UICollectionViewCell {
   
-  var addButton = SHButton()
-  var callButton = SHButton()
+  let imageProfileView = UIImageView(image: #imageLiteral(resourceName: "sharon-mccutcheon-7PZ8Gb-pmaA-unsplash"), contentMode: .scaleAspectFill)
+  let usernameLabel = UILabel(text: "Username Here", font: .boldSystemFont(ofSize: 14), textColor: .label, textAlignment: .center, numberOfLines: 2)
   
-  override func viewDidLoad() {
-      super.viewDidLoad()
-      configureNavBar()
-      configureViewController()
-      configureCollectionView()
+  var item: StatusMessenger! {
+    didSet{
+      usernameLabel.text = item.name
+    }
   }
   
-  fileprivate func configureViewController() {
-      view.backgroundColor = .systemBackground
-  }
-  
-  fileprivate func configureNavBar() {
-    view.addSubview(customNavBar)
-    customNavBar.addSubview(addButton)
-    customNavBar.addSubview(titled)
-
-    addButton.addTarget(self, action: #selector(handleAdd), for: .touchUpInside)
-    callButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    imageProfileView.translatesAutoresizingMaskIntoConstraints = false
+    usernameLabel.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(imageProfileView)
+    addSubview(usernameLabel)
     
-    addButton.setBackgroundImage(#imageLiteral(resourceName: "add"), for: .normal)
-    callButton.setBackgroundImage(#imageLiteral(resourceName: "call"), for: .normal)
-  
+    imageProfileView.layer.cornerRadius = 80 / 2
     NSLayoutConstraint.activate([
-      titled.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor, constant: 20),
-      titled.leadingAnchor.constraint(equalTo: customNavBar.leadingAnchor),
-      titled.widthAnchor.constraint(equalToConstant: 100),
-      titled.heightAnchor.constraint(equalToConstant: 100),
-
-      addButton.trailingAnchor.constraint(equalTo: customNavBar.trailingAnchor, constant: -20),
-      addButton.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor, constant: 20),
-      addButton.widthAnchor.constraint(equalToConstant: 30),
-      addButton.heightAnchor.constraint(equalToConstant: 30),
+      imageProfileView.widthAnchor.constraint(equalToConstant: 80),
+      imageProfileView.heightAnchor.constraint(equalToConstant: 80),
+      imageProfileView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      imageProfileView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
       
-      customNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      customNavBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      customNavBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      customNavBar.heightAnchor.constraint(equalToConstant: 100),
+      usernameLabel.topAnchor.constraint(equalTo: imageProfileView.bottomAnchor),
+      usernameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+      usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+      usernameLabel.heightAnchor.constraint(equalToConstant: 50)
     ])
     
   }
   
+  
+  required init?(coder: NSCoder) {
+    fatalError()
+  }
+  
+}
+
+class Calls: UICollectionViewController {
+
+  let customNavBar = CustomNavBar(title: "Calls", secondIcon: #imageLiteral(resourceName: "add"))
+ 
+  var items = [StatusMessenger]()
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      configureNavBar()
+      configureCollectionView()
+      items = [StatusMessenger(name: "Number One", profileImageView: ""),
+               StatusMessenger(name: "Number two", profileImageView: ""),
+               .init(name: "Number Tree", profileImageView: "")
+    ]
+   
+  }
+  
   fileprivate func configureCollectionView() {
-    collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    view.addSubview(collectionView)
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.register(CallCell.self, forCellWithReuseIdentifier: "cellID")
+    collectionView.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     collectionView.backgroundColor = .systemBackground
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+    collectionView.contentInset.top = 100
+    collectionView.reloadData()
+//    collectionView.scrolldire
+  }
+  
+  fileprivate func configureNavBar() {
+    view.addSubview(customNavBar)
+    customNavBar.getShadow()
+    customNavBar.secondIcon.addTarget(self, action: #selector(handleAdd), for: .touchUpInside)
     
-    NSLayoutConstraint.activate([
-       collectionView.topAnchor.constraint(equalTo: customNavBar.bottomAnchor, constant: 10),
-       collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-       collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-       collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-     ])
+    customNavBar.anchor(top: view.safeAreaLayoutGuide.topAnchor, right: view.trailingAnchor, bottom: nil, left: view.leadingAnchor)
+    customNavBar.heightConstraint(height: 100)
+    
   }
   
-  @objc fileprivate func handleSearch(){
-    print(#function)
-  
-  }
-  
+
   @objc func handleAdd() {
     print(#function)
   
+  }
+}
+
+///:- Data Source
+extension Calls {
+  
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return items.count
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CallCell
+    cell.item = items[indexPath.row]
+    return cell
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print(indexPath.item)
+  }
+  
+  
+}
+
+///:  Flow Layout
+extension Calls: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 120, height: 140)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
   }
 }

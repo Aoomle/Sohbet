@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import JGProgressHUD
 
 class SignInScreen: UIViewController {
   
@@ -34,6 +36,7 @@ class SignInScreen: UIViewController {
     navigationController?.navigationBar.prefersLargeTitles = true
     configureView()
     dismissKeyboardWithTap()
+    
   }
   
   fileprivate func dismissKeyboardWithTap() {
@@ -41,14 +44,15 @@ class SignInScreen: UIViewController {
     view.addGestureRecognizer(tap)
   }
   
+  let signInHUD = JGProgressHUD(style: .dark)
   
   @objc fileprivate func signInAction() {
-    guard isEmailEntered else {
+    guard isEmailEntered, let email = emailTextField.text else {
       showError(message: "Email can't be empty, please type your email address", buttonTitle: "Ok")
       return
     }
     
-    guard isPasswordEntered else {
+    guard isPasswordEntered, let password = passwordTextField.text else {
       showError(message: "Password can't be empty", buttonTitle: "Ok")
       return
     }
@@ -58,13 +62,44 @@ class SignInScreen: UIViewController {
       return
     }
     
-    //do networking here
-   // startLoading()
-    navigationController?.setNavigationBarHidden(true, animated: true)
-    navigationController?.pushViewController(TabMenu(), animated: true)
-    print("Do networking in signing in")
-   }
+      signInHUD.textLabel.text = "Signing In..."
+      signInHUD.show(in: view)
     
+    NetworkingManager.shared.signInUser(email: email, password: password) { (message) in
+      if let message = message {
+        self.startJG(titleError: message, messageError: "")
+        return
+      }
+      self.signInHUD.dismiss()
+      self.navigationController?.setNavigationBarHidden(true, animated: true)
+      self.navigationController?.pushViewController(TabMenu(), animated: true)
+    }
+
+//    Auth.auth().signIn(withEmail: email, password: password) { (success,err) in
+//      if let err = err {
+//        self.startJG(titleError: err.localizedDescription, messageError: "")
+//        return
+//      }
+//      print("\(success?.user.email ?? "")")
+//      self.navigationController?.setNavigationBarHidden(true, animated: true)
+//      self.navigationController?.pushViewController(TabMenu(), animated: true)
+//
+//    }
+//
+////    Auth.auth().sign
+   
+   }
+  
+
+    
+  
+  func startJG(titleError: String, messageError: String) {
+    signInHUD.dismiss(animated: true)
+    signInHUD.detailTextLabel.text = messageError
+    signInHUD.textLabel.text = titleError
+    signInHUD.show(in: self.view)
+    signInHUD.dismiss(afterDelay: 4, animated: true)
+  }
   
   @objc fileprivate func forgetPasswordAction() {
      pushToAnotherScreen(title: "Sign In", viewController: ForgetPasswordScreen())

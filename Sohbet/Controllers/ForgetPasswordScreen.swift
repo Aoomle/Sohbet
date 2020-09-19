@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import JGProgressHUD
 
 class ForgetPasswordScreen: UIViewController {
   
@@ -15,7 +17,11 @@ class ForgetPasswordScreen: UIViewController {
    
   let emailTextField = SHTextField(placeHolder: "Enter email address", textFieldType: .emailAddress)
   
-  let resetButton = SHButton(backgroundColor: .darkText, title: "Reset password", radius: 20)
+  let resetButton = SHButton(target: self, action: #selector(resetAction), tams: false)
+   
+  var isEmailEntered: Bool {
+     return !emailTextField.text!.isEmpty
+   }
    
   
   override func viewDidLoad() {
@@ -30,62 +36,75 @@ class ForgetPasswordScreen: UIViewController {
     view.addGestureRecognizer(tap)
   }
   
+  let resetHUD = JGProgressHUD(style: .dark)
+  
   @objc fileprivate func resetAction() {
-      print("Try resetting password...")
+    guard isEmailEntered, let email = emailTextField.text else {
+        showError(message: "Email can't be empty, please enter your email address", buttonTitle: "Ok")
+        return
+      }
+    guard emailTextField.text!.isEmailVaid else {
+        showError(message: "Email validation failed please enter your email address correct", buttonTitle: "Ok")
+        return
+      }
+
+    resetHUD.textLabel.text = "Resetting Password..."
+    resetHUD.show(in: view)
+    
+    Auth.auth().sendPasswordReset(withEmail: email) { (err) in
+      if let err = err {
+        self.resetErrorHUD(err: err)
+        return
+      }
+      self.showError(message: "We've have sent you a link to your email address oh how to reset your password", buttonTitle: "Ok")
+      self.resetHUD.dismiss(animated: true)
+      self.navigationController?.popToRootViewController(animated: true)
+    }
+
     view.endEditing(true)
    }
   
-  
-  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-    super.traitCollectionDidChange(previousTraitCollection)
-    
-    if traitCollection.userInterfaceStyle == .dark {
-      resetButton.backgroundColor = .white
-      resetButton.setTitleColor(.black, for: .normal)
-    } else if traitCollection.userInterfaceStyle == .light {
-      resetButton.backgroundColor = .darkText
-      resetButton.setTitleColor(.white, for: .normal)
-    }
+  fileprivate func resetErrorHUD(err: Error) {
+    resetHUD.dismiss()
+    let resetPassword = JGProgressHUD(style: .dark)
+    resetPassword.dismiss(animated: true)
+    resetPassword.textLabel.text = err.localizedDescription
+    resetPassword.show(in: self.view)
+    resetPassword.dismiss(afterDelay: 4, animated: true)
   }
   
   fileprivate func configureView() {
-    
     view.addSubview(forgetPasswordLabel)
     view.addSubview(enterPasswordMessageLabel)
     view.addSubview(emailTextField)
     view.addSubview(resetButton)
     
-    enterPasswordMessageLabel.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
-    
-    //add action to reset button
-    resetButton.addTarget(self, action: #selector(resetAction), for: .touchUpInside)
-    
-    //delegate
     emailTextField.delegate = self
     
+    enterPasswordMessageLabel.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
+    
+    resetButton.customButton(background: .label, titleColor: .systemBackground, title: "Rest Password")
+    resetButton.layer.cornerRadius = 20
+   
+    configureConstraints()
+    
+  }
+  
+  fileprivate func configureConstraints() {
     //Layout change widht of forget password label is too large
     //adjust the font size instead of using widht constrait as 250
-    NSLayoutConstraint.activate([
-      forgetPasswordLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-      forgetPasswordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      forgetPasswordLabel.widthAnchor.constraint(equalToConstant: 250),
-      forgetPasswordLabel.heightAnchor.constraint(equalToConstant: 50),
+    forgetPasswordLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 50, right: nil, paddingRight: 0, bottom: nil, paddingBottom: 0, left: nil, paddingLeft: 0)
+    forgetPasswordLabel.hStack(view.centerXAnchor)
+    forgetPasswordLabel.size(width: 250, height: 50)
     
-      enterPasswordMessageLabel.topAnchor.constraint(equalTo: forgetPasswordLabel.bottomAnchor, constant: 20),
-      enterPasswordMessageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-      enterPasswordMessageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-      enterPasswordMessageLabel.heightAnchor.constraint(equalToConstant: 50),
-      
-      emailTextField.topAnchor.constraint(equalTo: enterPasswordMessageLabel.bottomAnchor, constant: 40),
-      emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-      emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-      emailTextField.heightAnchor.constraint(equalToConstant: 50),
-      
-      resetButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
-      resetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-      resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-      resetButton.heightAnchor.constraint(equalToConstant: 50)
-    ])
+    enterPasswordMessageLabel.anchor(top: forgetPasswordLabel.bottomAnchor, paddingTop: 20, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    enterPasswordMessageLabel.heightConstraint(height: 50)
+    
+    emailTextField.anchor(top: enterPasswordMessageLabel.bottomAnchor, paddingTop: 40, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    emailTextField.heightConstraint(height: 50)
+    
+    resetButton.anchor(top: emailTextField.bottomAnchor, paddingTop: 40, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    resetButton.heightConstraint(height: 50)
   }
   
   
