@@ -93,17 +93,17 @@ class ForgetPasswordScreen: UIViewController {
   fileprivate func configureConstraints() {
     //Layout change widht of forget password label is too large
     //adjust the font size instead of using widht constrait as 250
-    forgetPasswordLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 50, right: nil, paddingRight: 0, bottom: nil, paddingBottom: 0, left: nil, paddingLeft: 0)
+    forgetPasswordLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor,  right: nil,  bottom: nil, left: nil, paddingTop: 50)
     forgetPasswordLabel.hStack(view.centerXAnchor)
     forgetPasswordLabel.size(width: 250, height: 50)
     
-    enterPasswordMessageLabel.anchor(top: forgetPasswordLabel.bottomAnchor, paddingTop: 20, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    enterPasswordMessageLabel.anchor(top: forgetPasswordLabel.bottomAnchor, right: view.trailingAnchor,  bottom: nil, left: view.leadingAnchor, paddingTop: 20, paddingRight: 20, paddingLeft: 20)
     enterPasswordMessageLabel.heightConstraint(height: 50)
     
-    emailTextField.anchor(top: enterPasswordMessageLabel.bottomAnchor, paddingTop: 40, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    emailTextField.anchor(top: enterPasswordMessageLabel.bottomAnchor,right: view.trailingAnchor,  bottom: nil, left: view.leadingAnchor,  paddingTop: 40, paddingRight: 20, paddingBottom: 0,  paddingLeft: 20)
     emailTextField.heightConstraint(height: 50)
     
-    resetButton.anchor(top: emailTextField.bottomAnchor, paddingTop: 40, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    resetButton.anchor(top: emailTextField.bottomAnchor,right: view.trailingAnchor, bottom: nil, left: view.leadingAnchor, paddingTop: 40, paddingRight: 20, paddingLeft: 20)
     resetButton.heightConstraint(height: 50)
   }
   

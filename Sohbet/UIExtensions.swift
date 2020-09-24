@@ -99,10 +99,10 @@ extension UIView {
     layer.shadowColor = color
     layer.cornerRadius = radius
     layer.shadowOffset = Offset
-    layer.opacity = opacity
+    layer.shadowOpacity = opacity
   }
   
-  func anchor(top: NSLayoutYAxisAnchor?, paddingTop: CGFloat = 0, right: NSLayoutXAxisAnchor?, paddingRight: CGFloat = 0, bottom: NSLayoutYAxisAnchor?, paddingBottom: CGFloat = 0, left: NSLayoutXAxisAnchor?, paddingLeft: CGFloat = 0) {
+  func anchor(top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  bottom: NSLayoutYAxisAnchor?,  left: NSLayoutXAxisAnchor?,  paddingTop: CGFloat = 0, paddingRight: CGFloat = 0, paddingBottom: CGFloat = 0, paddingLeft: CGFloat = 0) {
   translatesAutoresizingMaskIntoConstraints = false
     if let top = top {
       topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
@@ -122,22 +122,27 @@ extension UIView {
   }
   
   func widthConstraint(width: CGFloat) {
+    translatesAutoresizingMaskIntoConstraints = false
     self.widthAnchor.constraint(equalToConstant: width).isActive = true
   }
   
   func heightConstraint(height: CGFloat) {
+    translatesAutoresizingMaskIntoConstraints = false
     self.heightAnchor.constraint(equalToConstant: height).isActive = true
   }
   
   func hStack(_ center: NSLayoutXAxisAnchor) {
+    translatesAutoresizingMaskIntoConstraints = false
     self.centerXAnchor.constraint(equalTo: center).isActive = true
   }
   
   func vStack(_ center: NSLayoutYAxisAnchor) {
+    translatesAutoresizingMaskIntoConstraints = false
     self.centerYAnchor.constraint(equalTo: center).isActive = true
   }
   
   func size(width: CGFloat, height: CGFloat) {
+    translatesAutoresizingMaskIntoConstraints = false
     self.widthAnchor.constraint(equalToConstant: width).isActive = true
     self.heightAnchor.constraint(equalToConstant: height).isActive = true
   }
@@ -167,14 +172,3 @@ extension UIImageView {
     self.clipsToBounds = true
   }
 }
-
-
-let txt = UITextField(placeholder: "adsad", textColor: .red, secureEntry: true, tams: true)
-
-//
-//extension CustomNavBar {
-//   func leftAndRightAnchor(leading: NSLayoutXAxisAnchor, trailing: NSLayoutXAxisAnchor, constant: CGFloat = 0) {
-//    leading.constraint(equalTo: leading, constant: constant).isActive = true
-//    trailing.constraint(equalTo: trailing, constant: -constant).isActive = true
-//  }
-//}

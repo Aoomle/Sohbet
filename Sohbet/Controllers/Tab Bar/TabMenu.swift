@@ -22,7 +22,6 @@ class TabMenu: UITabBarController {
     let layout = UICollectionViewFlowLayout()
     let layoutChat = UICollectionViewFlowLayout()
     viewControllers = [
-      generateController(viewController: Calls(collectionViewLayout: layout), title: "Calls", image: #imageLiteral(resourceName: "call")),
       generateController(viewController: Chat(collectionViewLayout: layoutChat), title: "Chats", image: #imageLiteral(resourceName: "chat")),
       generateController(viewController: ProfileController(collectionViewLayout: layout), title: "Profile", image: #imageLiteral(resourceName: "profile"))
     ]

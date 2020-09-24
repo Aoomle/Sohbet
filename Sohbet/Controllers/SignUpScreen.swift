@@ -66,23 +66,31 @@ class SignUpScreen: UIViewController {
     signUpHUD.textLabel.text = "Signing Up..."
     signUpHUD.show(in: view)
     
-    NetworkingManager.shared.signUpUser(email: email, password: password) { ( message) in
-      if let message = message {
-        self.startJG(titleError: message, messageError: "")
-        return
-      }
-      //storage
-      guard let image = self.profileImageButton.imageView?.image else { return }
-      guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
-      NetworkingManager.shared.saveToStorage(upload: uploadImage) { (messageStr) in
-        if let messageStr = messageStr {
-          self.startJG(titleError: messageStr, messageError: "")
-            return
-        }
+//    NetworkingManager.shared.signUpUser(email: email, password: password) { ( message) in
+//      if let message = message {
+//        self.startJG(titleError: message, messageError: "")
+//        return
+//      }
+//      //storage
+//      self.signUpHUD.dismiss()
+//      self.navigationController?.setNavigationBarHidden(true, animated: true)
+//      self.navigationController?.pushViewController(TabMenu(), animated: true)
+//
+//      guard let image = self.profileImageButton.imageView?.image else { return }
+//      guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
+//      NetworkingManager.shared.saveToStorage(upload: uploadImage) { (messageStr) in
+//        if let messageStr = messageStr {
+//          self.startJG(titleError: messageStr, messageError: "")
+//            return
+//        }
+        
+
+        
 //        //save to database
 //        NetworkingManager.shared.saveToDatabse(user: Auth.auth().currentUser!, data: ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""])
-      }
-    }
+//      }
+//    }
+    
     
     Auth.auth().createUser(withEmail: email, password: password) { (message, err) in
       if let err = err {
@@ -90,41 +98,43 @@ class SignUpScreen: UIViewController {
           //network connection problem
         self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
       } else {
+        
+        
           print("\(message?.user.email ?? "")")
           self.navigationController?.setNavigationBarHidden(true, animated: true)
           self.navigationController?.pushViewController(TabMenu(), animated: true)
-        
+
           //storage
       guard let image = self.profileImageButton.imageView?.image else { return }
       guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
       let filename = UUID().uuidString
-      
+
       let ref = Storage.storage().reference().child("profile_images").child(filename)
-      
+
       ref.putData(uploadImage, metadata: nil) { (metadata, err) in
         if let err = err {
           self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
         }
-        
+
       ref.downloadURL { (imageUrl, err) in
         if let err = err {
           self.startJG(titleError: err.localizedDescription, messageError: "")
           return
         }
-          
+
           print("Downloading of our url image....", imageUrl?.absoluteString ?? "")
-          
+
           //database
             let uid = message?.user.uid
             let dictionaryValues = ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""]
             let values = [uid : dictionaryValues]
-                      
+
             Database.database().reference().child("users").updateChildValues(values) { (err, dataRef) in
                 if let err = err {
                   print("database failed to saved data", err.localizedDescription)
                 }
                 print("Successfully saved into the database")
-                           
+
                 }
           }
         }
@@ -188,26 +198,26 @@ class SignUpScreen: UIViewController {
   
   func configureConstraints() {
     
-    joinUs.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 10, right: view.trailingAnchor, paddingRight: -20, bottom: nil, left: view.leadingAnchor, paddingLeft: 20)
+    joinUs.anchor(top: view.safeAreaLayoutGuide.topAnchor,right: view.trailingAnchor,  bottom: nil, left: view.leadingAnchor, paddingTop: 10, paddingRight: -20,  paddingLeft: 20)
     joinUs.heightConstraint(height: 116)
        
-    signUpLabel.anchor(top: joinUs.bottomAnchor, paddingTop: 20, right: view.trailingAnchor, paddingRight: 20, bottom: nil, left: view.leadingAnchor, paddingLeft: 20)
+    signUpLabel.anchor(top: joinUs.bottomAnchor,  right: view.trailingAnchor, bottom: nil, left: view.leadingAnchor, paddingTop: 20, paddingRight: 20, paddingLeft: 20)
     signUpLabel.heightConstraint(height: 30)
        
-    profileImageButton.anchor(top: signUpLabel.bottomAnchor, paddingTop: 10, right: nil, bottom: nil, left: nil)
+    profileImageButton.anchor(top: signUpLabel.bottomAnchor,right: nil, bottom: nil, left: nil, paddingTop: 10)
     profileImageButton.hStack(view.centerXAnchor)
     profileImageButton.size(width: 70, height: 70)
        
-    emailTextField.anchor(top: profileImageButton.bottomAnchor, paddingTop: 20, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    emailTextField.anchor(top: profileImageButton.bottomAnchor, right: view.trailingAnchor,  bottom: nil, left: view.leadingAnchor, paddingTop: 20, paddingRight: 20,  paddingBottom: 0, paddingLeft: 20)
     emailTextField.heightConstraint(height: 50)
        
-    passwordTextField.anchor(top: emailTextField.bottomAnchor, paddingTop: 20, right: view.trailingAnchor, paddingRight: 20, bottom: nil, paddingBottom: 0, left: view.leadingAnchor, paddingLeft: 20)
+    passwordTextField.anchor(top: emailTextField.bottomAnchor, right: view.trailingAnchor,  bottom: nil,  left: view.leadingAnchor,  paddingTop: 20, paddingRight: 20, paddingBottom: 0, paddingLeft: 20)
          passwordTextField.heightConstraint(height: 50)
     
-    signUpButton.anchor(top: nil, paddingTop: 0, right: nil, paddingRight: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 40, left: view.leadingAnchor, paddingLeft: 20)
+    signUpButton.anchor(top: nil, right: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor,  left: view.leadingAnchor, paddingBottom: 40, paddingLeft: 20)
     signUpButton.size(width: 80, height: 80)
 
-    termsButton.anchor(top: nil, paddingTop: 0, right: view.trailingAnchor, paddingRight: 20, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 70, left: nil, paddingLeft: 0)
+    termsButton.anchor(top: nil, right: view.trailingAnchor,bottom: view.safeAreaLayoutGuide.bottomAnchor,  left: nil,  paddingRight: 20, paddingBottom: 70)
     termsButton.size(width: 200, height: 20)
     
   }

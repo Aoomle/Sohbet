@@ -63,20 +63,19 @@ class NetworkingManager {
   
   
   
-  ///STORAGE
+  //MARK:-- STORAGE
   func saveToStorage(upload: Data, completion: @escaping ((String?) -> Void)) {
     let filename = UUID().uuidString
     let ref = Storage.storage().reference().child("profile_images").child(filename)
     ref.putData(upload, metadata: nil) { (metadata, err) in
       if let err = err {
         completion(err.localizedDescription)
-//           self.startJG(titleError: "Signing Up Failed..", messageError: err.localizedDescription)
+
       }
 
     ref.downloadURL { (imageUrl, err) in
       if let err = err {
         completion(err.localizedDescription)
-//            self.startJG(titleError: err.localizedDescription, messageError: "")
         return
       }
       
@@ -88,7 +87,7 @@ class NetworkingManager {
   
   
   
-  ///DATABASE
+  //MARK:-- DATABASE
   
   func saveToDatabse(data: [String: Any]) {
 
