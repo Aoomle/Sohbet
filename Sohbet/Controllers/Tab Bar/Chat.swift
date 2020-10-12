@@ -48,7 +48,7 @@ class Chat: UICollectionViewController {
   
   fileprivate func configureNavBar() {
     let statusBarCover = UIView()
-    statusBarCover.backgroundColor = .white
+    statusBarCover.backgroundColor = .systemBackground
     view.addSubview(statusBarCover)
     view.addSubview(customNavBar)
     customNavBar.getShadow()

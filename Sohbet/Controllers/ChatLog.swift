@@ -31,7 +31,7 @@ class ChatLog: UICollectionViewController {
   }
   
   fileprivate func setupCollectionView() {
-    UITabBarAppearance.setAccessibilityElementsHidden(true)
+//    UITabBarAppearance.setAccessibilityElementsHidden(true)
 //    UITabBarAppearance.accessibilityElementsHidden()
     collectionView.backgroundColor = .systemBackground
     collectionView.register(ChatLogCell.self, forCellWithReuseIdentifier: "cellID")

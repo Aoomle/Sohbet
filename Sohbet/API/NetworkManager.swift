@@ -52,9 +52,7 @@ class NetworkingManager {
         return
       }
       completion(nil)
-      //self.saveToStorage(upload: <#T##Data#>, completion: <#T##((String?) -> Void)##((String?) -> Void)##(String?) -> Void#>)
-      //save to storage
-      //save to database
+//      self.saveToStorage(email: email , upload: <#T##Data#>, completion: <#T##((String?) -> Void)##((String?) -> Void)##(String?) -> Void#>)
     }
   }
   
@@ -64,7 +62,7 @@ class NetworkingManager {
   
   
   //MARK:-- STORAGE
-  func saveToStorage(upload: Data, completion: @escaping ((String?) -> Void)) {
+ private func saveToStorage(email: String,upload: Data, completion: @escaping ((String?) -> Void)) {
     let filename = UUID().uuidString
     let ref = Storage.storage().reference().child("profile_images").child(filename)
     ref.putData(upload, metadata: nil) { (metadata, err) in
@@ -79,7 +77,8 @@ class NetworkingManager {
         return
       }
       
-      print("Downloading of our url image....", imageUrl?.absoluteString ?? "")
+      self.saveToDatabse(data: ["email": String.self,"profileUrl":imageUrl?.absoluteString ?? ""])
+//      print("Downloading of our url image....", imageUrl?.absoluteString ?? "")
                
       }
     }
