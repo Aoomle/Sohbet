@@ -30,6 +30,10 @@ class ChatLogComtroller: UICollectionViewController {
   
   }
   
+  override var canBecomeFirstResponder: Bool {
+   return true
+  }
+  
   fileprivate func setupCollectionView() {
     collectionView.backgroundColor = .systemBackground
     collectionView.register(ChatLogCell.self, forCellWithReuseIdentifier: "cellID")
