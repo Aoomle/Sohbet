@@ -18,7 +18,7 @@ class ChatLogNavBar: UIView {
     super.init(frame: frame)
    
     setupShadow(color: UIColor(white: 0, alpha: 0.5).cgColor, radius: 8, Offset: CGSize(width: 0, height: 10), opacity: 0.2)
-    backgroundColor = .white
+    backgroundColor = .systemBackground
     
     getciruclarImageView(image: circleImage, widht: 44)
     

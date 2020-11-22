@@ -32,13 +32,13 @@
 		478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A4C4124FE050200B12A78 /* SHAlertView.swift */; };
 		478B0D82251007D500AD0C46 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B0D81251007D500AD0C46 /* ProfileController.swift */; };
 		478B0D842510257B00AD0C46 /* StatusMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B0D832510257B00AD0C46 /* StatusMessenger.swift */; };
-		478F8E8A251A56AC00822E7A /* ChatLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F8E89251A56AC00822E7A /* ChatLog.swift */; };
+		478F8E8A251A56AC00822E7A /* ChatLogComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F8E89251A56AC00822E7A /* ChatLogComtroller.swift */; };
 		4795ECB3251CA45C001C6BB7 /* ChatLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795ECB2251CA45C001C6BB7 /* ChatLogCell.swift */; };
 		4795ECB5251CA61C001C6BB7 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795ECB4251CA61C001C6BB7 /* Messages.swift */; };
 		47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7EE6624FE09AF00D62884 /* SHContainerView.swift */; };
 		47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9625074A2500D5F9FF /* TabMenu.swift */; };
 		47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9A2507569D00D5F9FF /* SHBarButton.swift */; };
-		47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9D2507587D00D5F9FF /* Chat.swift */; };
+		47C96F9E2507587D00D5F9FF /* ChatCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9D2507587D00D5F9FF /* ChatCellController.swift */; };
 		47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */; };
 		47CEA0EC253006F9001F6907 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 47CEA0EB253006F9001F6907 /* FirebaseStorage */; };
 		47CEA0EE253006F9001F6907 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 47CEA0ED253006F9001F6907 /* FirebaseAuth */; };
@@ -79,13 +79,13 @@
 		478A4C4124FE050200B12A78 /* SHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertView.swift; sourceTree = "<group>"; };
 		478B0D81251007D500AD0C46 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		478B0D832510257B00AD0C46 /* StatusMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessenger.swift; sourceTree = "<group>"; };
-		478F8E89251A56AC00822E7A /* ChatLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLog.swift; sourceTree = "<group>"; };
+		478F8E89251A56AC00822E7A /* ChatLogComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogComtroller.swift; sourceTree = "<group>"; };
 		4795ECB2251CA45C001C6BB7 /* ChatLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogCell.swift; sourceTree = "<group>"; };
 		4795ECB4251CA61C001C6BB7 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		47A7EE6624FE09AF00D62884 /* SHContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHContainerView.swift; sourceTree = "<group>"; };
 		47C96F9625074A2500D5F9FF /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 		47C96F9A2507569D00D5F9FF /* SHBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBarButton.swift; sourceTree = "<group>"; };
-		47C96F9D2507587D00D5F9FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		47C96F9D2507587D00D5F9FF /* ChatCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellController.swift; sourceTree = "<group>"; };
 		47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		47E1E467250E0605007522DB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		47E1E46F250E94D9007522DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		474C01A924FA03BD00C6AFE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				478F8E89251A56AC00822E7A /* ChatLog.swift */,
+				478F8E89251A56AC00822E7A /* ChatLogComtroller.swift */,
 				4722433924F9DD6300ABAFA7 /* Home.swift */,
 				4765B63324FB274B001B4C53 /* SignInScreen.swift */,
 				4765B63524FB2799001B4C53 /* SignUpScreen.swift */,
@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				47C96F9625074A2500D5F9FF /* TabMenu.swift */,
-				47C96F9D2507587D00D5F9FF /* Chat.swift */,
+				47C96F9D2507587D00D5F9FF /* ChatCellController.swift */,
 				478B0D81251007D500AD0C46 /* ProfileController.swift */,
 			);
 			path = "Tab Bar";
@@ -381,7 +381,7 @@
 			files = (
 				4722434A24F9DF2000ABAFA7 /* SHTextField.swift in Sources */,
 				474C01A824FA01EF00C6AFE8 /* SHButton.swift in Sources */,
-				478F8E8A251A56AC00822E7A /* ChatLog.swift in Sources */,
+				478F8E8A251A56AC00822E7A /* ChatLogComtroller.swift in Sources */,
 				47FAA80525162CED002F1E24 /* ChatCell.swift in Sources */,
 				47C96FA725075AFD00D5F9FF /* ErrorMessage.swift in Sources */,
 				478B0D842510257B00AD0C46 /* StatusMessenger.swift in Sources */,
@@ -406,7 +406,7 @@
 				4753D80825105E9500D2F7D5 /* NetworkManager.swift in Sources */,
 				478B0D82251007D500AD0C46 /* ProfileController.swift in Sources */,
 				47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */,
-				47C96F9E2507587D00D5F9FF /* Chat.swift in Sources */,
+				47C96F9E2507587D00D5F9FF /* ChatCellController.swift in Sources */,
 				47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */,
 				47E1E470250E94D9007522DB /* Settings.swift in Sources */,
 				478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */,
@@ -482,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -537,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

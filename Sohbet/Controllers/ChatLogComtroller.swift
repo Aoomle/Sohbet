@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatLog: UICollectionViewController {
+class ChatLogComtroller: UICollectionViewController {
   
   let navCustom = ChatLogNavBar()
   
@@ -31,8 +31,6 @@ class ChatLog: UICollectionViewController {
   }
   
   fileprivate func setupCollectionView() {
-//    UITabBarAppearance.setAccessibilityElementsHidden(true)
-//    UITabBarAppearance.accessibilityElementsHidden()
     collectionView.backgroundColor = .systemBackground
     collectionView.register(ChatLogCell.self, forCellWithReuseIdentifier: "cellID")
     collectionView.contentInset.top = navCustomHeight
@@ -49,7 +47,7 @@ class ChatLog: UICollectionViewController {
 }
 
 //MARK:- DataSource
-extension ChatLog {
+extension ChatLogComtroller {
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return item.count
   }
@@ -64,7 +62,7 @@ extension ChatLog {
 }
 
 //MARK:- Delegate Flow Layout
-extension ChatLog: UICollectionViewDelegateFlowLayout {
+extension ChatLogComtroller: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return .init(top: 16, left: 0, bottom: 16, right: 0)
   }

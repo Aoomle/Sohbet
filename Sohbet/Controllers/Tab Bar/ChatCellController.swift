@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
   
-class Chat: UICollectionViewController {
+class ChatCellController: UICollectionViewController {
 
   let customNavBar = CustomNavBar(title: "Chat", firstIcon: #imageLiteral(resourceName: "add"), secondIcon: #imageLiteral(resourceName: "icons8-search"))
   fileprivate let cellID = "cellID"
@@ -80,7 +80,7 @@ class Chat: UICollectionViewController {
   }
 }
 
-extension Chat: UICollectionViewDelegateFlowLayout {
+extension ChatCellController: UICollectionViewDelegateFlowLayout {
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
@@ -100,7 +100,7 @@ extension Chat: UICollectionViewDelegateFlowLayout {
     print(indexPath.item)
     let layout = UICollectionViewFlowLayout()
 //    layout.hide
-    let chatLog = ChatLog(collectionViewLayout: layout)
+    let chatLog = ChatLogComtroller(collectionViewLayout: layout)
 
 //    chatLog.tabBarController?.hidesBottomBarWhenPushed = true
     show(chatLog, sender: nil)
