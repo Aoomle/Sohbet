@@ -100,7 +100,7 @@ extension ChatCellController: UICollectionViewDelegateFlowLayout {
     print(indexPath.item)
     let layout = UICollectionViewFlowLayout()
 //    layout.hide
-    let chatLog = ChatLogComtroller(collectionViewLayout: layout)
+    let chatLog = ChatLogController(collectionViewLayout: layout)
 
 //    chatLog.tabBarController?.hidesBottomBarWhenPushed = true
     show(chatLog, sender: nil)

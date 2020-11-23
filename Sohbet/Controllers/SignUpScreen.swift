@@ -40,8 +40,7 @@ class SignUpScreen: UIViewController {
   }
   
   fileprivate func dismissKeyboardWithTap() {
-    let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-    view.addGestureRecognizer(tap)
+    view.endEditing(true)
   }
   
   
@@ -65,31 +64,6 @@ class SignUpScreen: UIViewController {
           
     signUpHUD.textLabel.text = "Signing Up..."
     signUpHUD.show(in: view)
-    
-//    NetworkingManager.shared.signUpUser(email: email, password: password) { ( message) in
-//      if let message = message {
-//        self.startJG(titleError: message, messageError: "")
-//        return
-//      }
-//      //storage
-//      self.signUpHUD.dismiss()
-//      self.navigationController?.setNavigationBarHidden(true, animated: true)
-//      self.navigationController?.pushViewController(TabMenu(), animated: true)
-//
-//      guard let image = self.profileImageButton.imageView?.image else { return }
-//      guard let uploadImage = image.jpegData(compressionQuality: 0.75) else { return }
-//      NetworkingManager.shared.saveToStorage(upload: uploadImage) { (messageStr) in
-//        if let messageStr = messageStr {
-//          self.startJG(titleError: messageStr, messageError: "")
-//            return
-//        }
-        
-
-        
-//        //save to database
-//        NetworkingManager.shared.saveToDatabse(user: Auth.auth().currentUser!, data: ["email": email, "profileUrl": imageUrl?.absoluteString ?? ""])
-//      }
-//    }
     
     
     Auth.auth().createUser(withEmail: email, password: password) { (message, err) in
@@ -158,7 +132,8 @@ class SignUpScreen: UIViewController {
   }
   
   @objc fileprivate func termsButtonAction() {
-    pushToAnotherScreen(title: "Sign Up", viewController: TermsScreen())
+   print("TermsScreen has been disabled")
+    // pushToAnotherScreen(title: "Sign Up", viewController: TermsScreen())
   }
   
   fileprivate func pushToAnotherScreen(title: String, viewController: UIViewController) {
@@ -194,7 +169,7 @@ class SignUpScreen: UIViewController {
     
     }
   
-  //:--Constraints
+  //MARK:--Constraints
   
   func configureConstraints() {
     
@@ -219,6 +194,8 @@ class SignUpScreen: UIViewController {
 
     termsButton.anchor(top: nil, right: view.trailingAnchor,bottom: view.safeAreaLayoutGuide.bottomAnchor,  left: nil,  paddingRight: 20, paddingBottom: 70)
     termsButton.size(width: 200, height: 20)
+    
+    
     
   }
 }
@@ -246,38 +223,3 @@ extension SignUpScreen: UIImagePickerControllerDelegate, UINavigationControllerD
     dismiss(animated: true, completion: nil)
   }
 }
-
-
-//    NSLayoutConstraint.activate([
-//
-//        signUpLabel.topAnchor.constraint(equalTo: joinUs.bottomAnchor, constant: 20),
-//        signUpLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//        signUpLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//        signUpLabel.heightAnchor.constraint(equalToConstant: 30),
-//
-//        profileImageButton.topAnchor.constraint(equalTo: signUpLabel.bottomAnchor, constant: 10),
-//        profileImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//        profileImageButton.widthAnchor.constraint(equalToConstant: 70),
-//        profileImageButton.heightAnchor.constraint(equalToConstant: 70),
-//
-//        emailTextField.topAnchor.constraint(equalTo: profileImageButton.bottomAnchor, constant: 20),
-//        emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//        emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//        emailTextField.heightAnchor.constraint(equalToConstant: 50),
-//
-//        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-//        passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//        passwordTextField.heightAnchor.constraint(equalToConstant: 50),
-//
-//        signUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-//        signUpButton.heightAnchor.constraint(equalToConstant: 80),
-//        signUpButton.widthAnchor.constraint(equalToConstant: 80),
-//        signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//
-//        termsButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -70),
-//        termsButton.heightAnchor.constraint(equalToConstant: 20),
-//        termsButton.widthAnchor.constraint(equalToConstant: 200),
-//        termsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-//
-//      ])

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+//import SDWebImage
 
 class ChatCell: UICollectionViewCell {
 
@@ -18,14 +18,14 @@ let messageLabel = UILabel(text: "Hello everyone sdfsijnfgdsg isadjfnsfdjnasd sa
 var item: StatusMessenger! {
   didSet{
     usernameLabel.text = item.name
-    imageProfileView.sd_setImage(with: URL(string: item.profileImageView))
+    imageProfileView.image = #imageLiteral(resourceName: "aoomle")
+    //imageProfileView.sd_setImage(with: URL(string: item.profileImageView))
   }
 }
 
 override init(frame: CGRect) {
   super.init(frame: frame)
-  imageProfileView.translatesAutoresizingMaskIntoConstraints = false
-  usernameLabel.translatesAutoresizingMaskIntoConstraints = false
+  
   addSubview(imageProfileView)
   addSubview(usernameLabel)
   addSubview(messageLabel)

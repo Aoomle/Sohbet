@@ -34,24 +34,23 @@ class NetworkingManager {
     return false
   }
   
-  func signInUser(email: String, password: String, completion: @escaping ((String?) -> Void) ) {
+  func signInUser(email: String, password: String, completed: @escaping ((String?) -> Void) ) {
     Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
       if let error = error {
-        self.errorHandler(err: error as NSError, completion: completion)
+        self.errorHandler(err: error as NSError, completion: completed)
         return
       }
-      //
-      completion(nil)
+      completed(nil)
     }
   }
   
-  func signUpUser(email: String, password: String, completion: @escaping ((String?) -> Void)) {
+  func signUpUser(email: String, password: String, completed: @escaping ((String?) -> Void)) {
     Auth.auth().createUser(withEmail: email, password: password) { (data, err) in
       if let error = err {
-        self.errorHandler(err: error as NSError, completion: completion)
+        self.errorHandler(err: error as NSError, completion: completed)
         return
       }
-      completion(nil)
+      completed(nil)
 //      self.saveToStorage(email: email , upload: <#T##Data#>, completion: <#T##((String?) -> Void)##((String?) -> Void)##(String?) -> Void#>)
     }
   }

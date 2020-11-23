@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ChatLogCell: UICollectionViewCell {
   
   let textView: UITextView = {
@@ -29,6 +27,17 @@ class ChatLogCell: UICollectionViewCell {
     didSet {
       textView.text = message.text
       
+      if message.isFromCurrentUser {
+        bubbleAlignment(leading: nil, trailing: trailingAnchor, padRight: 20)
+        bubbleContainer.backgroundColor = .systemBlue
+        textView.textColor = .black
+        
+      } else {
+        bubbleAlignment(leading: leadingAnchor, padLeft: 20, trailing: nil)
+//        textView.backgroundColor = .systemBlue
+//        textView.textColor = .black
+      }
+      
     }
   }
   
@@ -40,11 +49,13 @@ class ChatLogCell: UICollectionViewCell {
     bubbleContainer.backgroundColor = .label
     bubbleContainer.layer.cornerRadius = 12
     
-    bubbleContainer.anchor(top: topAnchor, right: trailingAnchor, bottom: bottomAnchor, left: nil, paddingRight: 20)
-    bubbleContainer.widthAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
-    
     textView.anchor(top: bubbleContainer.topAnchor, right: bubbleContainer.trailingAnchor, bottom: bubbleContainer.bottomAnchor, left: bubbleContainer.leadingAnchor, paddingTop: 4, paddingRight: 12, paddingBottom: 4, paddingLeft: 12)
    
+  }
+  
+  fileprivate func bubbleAlignment(leading: NSLayoutXAxisAnchor? = nil, padLeft: CGFloat = 0, trailing: NSLayoutXAxisAnchor? = nil, padRight: CGFloat = 0) {
+    bubbleContainer.anchor(top: topAnchor, right: trailing, bottom: bottomAnchor, left: leading, paddingRight: padRight, paddingLeft: padLeft)
+    bubbleContainer.widthAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
   }
   
   

@@ -91,8 +91,8 @@ class ForgetPasswordScreen: UIViewController {
   }
   
   fileprivate func configureConstraints() {
-    //Layout change widht of forget password label is too large
-    //adjust the font size instead of using widht constrait as 250
+    //Layout change width of forget password label is too large
+    //adjust the font size instead of using width constrait as 250
     forgetPasswordLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor,  right: nil,  bottom: nil, left: nil, paddingTop: 50)
     forgetPasswordLabel.hStack(view.centerXAnchor)
     forgetPasswordLabel.size(width: 250, height: 50)

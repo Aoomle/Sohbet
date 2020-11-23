@@ -17,8 +17,6 @@
 		4722434224F9DD6600ABAFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4722434024F9DD6600ABAFA7 /* LaunchScreen.storyboard */; };
 		4722434A24F9DF2000ABAFA7 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722434924F9DF2000ABAFA7 /* SHTextField.swift */; };
 		47225BE424FCC0A10081C87D /* ForgetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */; };
-		47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE524FCC2190081C87D /* TermsScreen.swift */; };
-		47225BE824FCC57C0081C87D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47225BE724FCC57C0081C87D /* String+Ext.swift */; };
 		472414F82507E14F0022A592 /* SHAlertViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472414F72507E14F0022A592 /* SHAlertViewError.swift */; };
 		472415002507F4EE0022A592 /* SHActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472414FF2507F4EE0022A592 /* SHActivityView.swift */; };
 		4724150225080A090022A592 /* SHActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724150125080A090022A592 /* SHActivityIndicator.swift */; };
@@ -45,7 +43,6 @@
 		47CEA0F0253006F9001F6907 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 47CEA0EF253006F9001F6907 /* FirebaseFirestore */; };
 		47CEA0F2253006F9001F6907 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 47CEA0F1253006F9001F6907 /* FirebaseDatabase */; };
 		47E1E468250E0605007522DB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1E467250E0605007522DB /* ProfileCell.swift */; };
-		47E1E470250E94D9007522DB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1E46F250E94D9007522DB /* Settings.swift */; };
 		47E395B5251A64910045A900 /* ChatLogNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E395B4251A64910045A900 /* ChatLogNavBar.swift */; };
 		47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E834C7250C15E800D4DA09 /* UIExtensions.swift */; };
 		47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0B572250347D4009EBDFC /* SHAlertTitle.swift */; };
@@ -64,8 +61,6 @@
 		4722434324F9DD6600ABAFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4722434924F9DF2000ABAFA7 /* SHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordScreen.swift; sourceTree = "<group>"; };
-		47225BE524FCC2190081C87D /* TermsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsScreen.swift; sourceTree = "<group>"; };
-		47225BE724FCC57C0081C87D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		472414F72507E14F0022A592 /* SHAlertViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertViewError.swift; sourceTree = "<group>"; };
 		472414FF2507F4EE0022A592 /* SHActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHActivityView.swift; sourceTree = "<group>"; };
 		4724150125080A090022A592 /* SHActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHActivityIndicator.swift; sourceTree = "<group>"; };
@@ -88,7 +83,6 @@
 		47C96F9D2507587D00D5F9FF /* ChatCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellController.swift; sourceTree = "<group>"; };
 		47C96FA625075AFD00D5F9FF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		47E1E467250E0605007522DB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		47E1E46F250E94D9007522DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		47E395B4251A64910045A900 /* ChatLogNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogNavBar.swift; sourceTree = "<group>"; };
 		47E834C7250C15E800D4DA09 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		47F0B572250347D4009EBDFC /* SHAlertTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAlertTitle.swift; sourceTree = "<group>"; };
@@ -149,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				47E834C7250C15E800D4DA09 /* UIExtensions.swift */,
-				47225BE724FCC57C0081C87D /* String+Ext.swift */,
 				473FCAD42503503300A7CD32 /* UIViewController+Ext.swift */,
 			);
 			name = Extensions;
@@ -191,7 +184,6 @@
 				4765B63324FB274B001B4C53 /* SignInScreen.swift */,
 				4765B63524FB2799001B4C53 /* SignUpScreen.swift */,
 				47225BE324FCC0A10081C87D /* ForgetPasswordScreen.swift */,
-				47225BE524FCC2190081C87D /* TermsScreen.swift */,
 				47C96F9F250758B200D5F9FF /* Tab Bar */,
 			);
 			path = Controllers;
@@ -262,7 +254,6 @@
 		47C96FA325075A5100D5F9FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				47E1E46F250E94D9007522DB /* Settings.swift */,
 				478B0D832510257B00AD0C46 /* StatusMessenger.swift */,
 				4795ECB4251CA61C001C6BB7 /* Messages.swift */,
 			);
@@ -407,13 +398,10 @@
 				478B0D82251007D500AD0C46 /* ProfileController.swift in Sources */,
 				47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */,
 				47C96F9E2507587D00D5F9FF /* ChatCellController.swift in Sources */,
-				47225BE624FCC2190081C87D /* TermsScreen.swift in Sources */,
-				47E1E470250E94D9007522DB /* Settings.swift in Sources */,
 				478A4C4224FE050200B12A78 /* SHAlertView.swift in Sources */,
 				47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */,
 				47F0B573250347D4009EBDFC /* SHAlertTitle.swift in Sources */,
 				473FCAD52503503300A7CD32 /* UIViewController+Ext.swift in Sources */,
-				47225BE824FCC57C0081C87D /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

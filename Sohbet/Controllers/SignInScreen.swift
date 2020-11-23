@@ -40,8 +40,7 @@ class SignInScreen: UIViewController {
   }
   
   fileprivate func dismissKeyboardWithTap() {
-    let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-    view.addGestureRecognizer(tap)
+    view.endEditing(true)
   }
   
   let signInHUD = JGProgressHUD(style: .dark)
@@ -75,18 +74,6 @@ class SignInScreen: UIViewController {
       self.navigationController?.pushViewController(TabMenu(), animated: true)
     }
 
-//    Auth.auth().signIn(withEmail: email, password: password) { (success,err) in
-//      if let err = err {
-//        self.startJG(titleError: err.localizedDescription, messageError: "")
-//        return
-//      }
-//      print("\(success?.user.email ?? "")")
-//      self.navigationController?.setNavigationBarHidden(true, animated: true)
-//      self.navigationController?.pushViewController(TabMenu(), animated: true)
-//
-//    }
-//
-////    Auth.auth().sign
    
    }
   

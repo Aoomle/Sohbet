@@ -10,5 +10,5 @@ import Foundation
 
 struct Messages {
   let text: String
-//  let back
+  let isFromCurrentUser: Bool
 }
