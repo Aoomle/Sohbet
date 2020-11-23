@@ -54,15 +54,21 @@ class ChatLogController: UICollectionViewController {
     let textView = UITextView()
     textView.text = "MAKE SURE TO USE THIS"
     
-    let button = UIButton(title: "SEND", font: .boldSystemFont(ofSize: 14), titleColor: .black, titleBackgroundColor: .systemBackground, shadow: .systemBackground, target:nil, action: nil, tams: false)
+    let button = UIButton(title: "SEND", font: .boldSystemFont(ofSize: 14), titleColor: .red, titleBackgroundColor: .systemBackground, shadow: .systemBackground, target:nil, action: nil, tams: false)
     
-    redView.addSubview(textView)
     
-    textView.translatesAutoresizingMaskIntoConstraints = false
-    textView.topAnchor.constraint(equalTo: redView.topAnchor).isActive = true
-    textView.leadingAnchor.constraint(equalTo: redView.leadingAnchor).isActive = true
-    textView.trailingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
-    textView.bottomAnchor.constraint(equalTo: redView.bottomAnchor).isActive = true
+    let stackView = UIStackView(arrangedSubviews: [textView, button])
+
+    redView.addSubview(stackView)
+    
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    // stackView.topAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.topAnchor).isActive = true
+    stackView.leadingAnchor.constraint(equalTo: redView.leadingAnchor).isActive = true
+    stackView.trailingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
+    stackView.bottomAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    
+    stackView.isLayoutMarginsRelativeArrangement = true
     
     return redView
   }()
