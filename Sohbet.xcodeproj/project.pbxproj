@@ -34,6 +34,7 @@
 		4795ECB3251CA45C001C6BB7 /* ChatLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795ECB2251CA45C001C6BB7 /* ChatLogCell.swift */; };
 		4795ECB5251CA61C001C6BB7 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795ECB4251CA61C001C6BB7 /* Messages.swift */; };
 		47A7EE6724FE09AF00D62884 /* SHContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7EE6624FE09AF00D62884 /* SHContainerView.swift */; };
+		47ADC3E9256C96B100F1D672 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADC3E8256C96B100F1D672 /* CustomInputAccessoryView.swift */; };
 		47C96F9725074A2500D5F9FF /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9625074A2500D5F9FF /* TabMenu.swift */; };
 		47C96F9B2507569D00D5F9FF /* SHBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9A2507569D00D5F9FF /* SHBarButton.swift */; };
 		47C96F9E2507587D00D5F9FF /* ChatCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C96F9D2507587D00D5F9FF /* ChatCellController.swift */; };
@@ -78,6 +79,7 @@
 		4795ECB2251CA45C001C6BB7 /* ChatLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogCell.swift; sourceTree = "<group>"; };
 		4795ECB4251CA61C001C6BB7 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		47A7EE6624FE09AF00D62884 /* SHContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHContainerView.swift; sourceTree = "<group>"; };
+		47ADC3E8256C96B100F1D672 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		47C96F9625074A2500D5F9FF /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 		47C96F9A2507569D00D5F9FF /* SHBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBarButton.swift; sourceTree = "<group>"; };
 		47C96F9D2507587D00D5F9FF /* ChatCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				478F8E89251A56AC00822E7A /* ChatLogComtroller.swift */,
+				47ADC3E8256C96B100F1D672 /* CustomInputAccessoryView.swift */,
 				4722433924F9DD6300ABAFA7 /* Home.swift */,
 				4765B63324FB274B001B4C53 /* SignInScreen.swift */,
 				4765B63524FB2799001B4C53 /* SignUpScreen.swift */,
@@ -384,6 +387,7 @@
 				4722433624F9DD6300ABAFA7 /* AppDelegate.swift in Sources */,
 				4722433824F9DD6300ABAFA7 /* SceneDelegate.swift in Sources */,
 				4765B63224FB14C3001B4C53 /* SHLabel.swift in Sources */,
+				47ADC3E9256C96B100F1D672 /* CustomInputAccessoryView.swift in Sources */,
 				472414F82507E14F0022A592 /* SHAlertViewError.swift in Sources */,
 				47E834C8250C15E800D4DA09 /* UIExtensions.swift in Sources */,
 				4795ECB3251CA45C001C6BB7 /* ChatLogCell.swift in Sources */,

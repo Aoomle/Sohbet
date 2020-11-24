@@ -33,44 +33,13 @@ class ChatLogController: UICollectionViewController {
   }
   
   
-  //MARK:- Input  Accessory view
-  
-  class CustomInput: UIView {
-    
-    override var intrinsicContentSize: CGSize {
-      return .zero
-    }
-  }
   
   override var canBecomeFirstResponder: Bool {
    return true
   }
   
   lazy var redView:  UIView = {
-    let redView = CustomInput(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
-    redView.backgroundColor = .white
-
-    
-    let textView = UITextView()
-    textView.text = "MAKE SURE TO USE THIS"
-    
-    let button = UIButton(title: "SEND", font: .boldSystemFont(ofSize: 14), titleColor: .red, titleBackgroundColor: .systemBackground, shadow: .systemBackground, target:nil, action: nil, tams: false)
-    
-    
-    let stackView = UIStackView(arrangedSubviews: [textView, button])
-
-    redView.addSubview(stackView)
-    
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    // stackView.topAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.topAnchor).isActive = true
-    stackView.leadingAnchor.constraint(equalTo: redView.leadingAnchor).isActive = true
-    stackView.trailingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
-    stackView.bottomAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-    
-    stackView.isLayoutMarginsRelativeArrangement = true
-    
-    return redView
+    return CustomInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
   }()
   
   override var inputAccessoryView: UIView? {
